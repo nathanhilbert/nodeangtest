@@ -3,6 +3,7 @@
  */
 
 exports.index = function(req, res){
+  console.log("doing somet stuff here");
   res.render('index');
 };
 

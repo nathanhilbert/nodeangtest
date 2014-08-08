@@ -11,8 +11,11 @@ angular.module('myApp.controllers', []).
   controller('MyCtrl1', function ($scope, socket) {
     socket.on('send:time', function (data) {
       $scope.time = data.time;
+      parseGeo(data.geojson);
     });
   }).
   controller('MyCtrl2', function ($scope) {
-    // write Ctrl here
+    socket.on('send:geom', function (data) {
+      parseGeo(data);
+    });
   });
